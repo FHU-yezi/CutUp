@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "cutup"
+version = "0.1.0"
+description = "分词能力"
+authors = ["yezi <yehaowei20060411@qq.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+sanic = "^23.3.0"
+sspeedup = {extras = ["api-response-sanic", "word-split-jieba"], version = "^0.5.0"}
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.261"
+pyright = "^1.1.302"
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
