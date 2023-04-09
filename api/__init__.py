@@ -1,5 +1,5 @@
 from sanic import Blueprint
 
-from api.v1 import v1
+from api.v1 import bp_v1
 
-api = Blueprint.group(v1, url_prefix="/api")
+bp_api = Blueprint.group(bp_v1, url_prefix="/api")
