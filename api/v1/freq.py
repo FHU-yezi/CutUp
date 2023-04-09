@@ -7,7 +7,7 @@ from sspeedup.api import CODE, sanic_response_json
 from utils.pydantic_base import BaseModel
 from utils.word_split import jieba_posseg_spliter, jieba_search_spliter, jieba_spliter
 
-bp_word_freq = Blueprint("word_freq", url_prefix="/word_freq")
+bp_freq = Blueprint("freq", url_prefix="/freq")
 
 
 class NormalHandlerRequest(BaseModel):
@@ -19,7 +19,7 @@ class NormalHandlerResponse(BaseModel):
     word_freq: Dict[str, int]
 
 
-@bp_word_freq.post("/normal")
+@bp_freq.post("/normal")
 def normal_handler(request: Request) -> HTTPResponse:
     try:
         request_data = NormalHandlerRequest.parse_obj(request.json)
@@ -45,7 +45,7 @@ class SearchHandlerResponse(BaseModel):
     word_freq: Dict[str, int]
 
 
-@bp_word_freq.post("/search")
+@bp_freq.post("/search")
 def search_handler(request: Request) -> HTTPResponse:
     try:
         request_data = SearchHandlerRequest.parse_obj(request.json)
@@ -72,7 +72,7 @@ class PossegHandlerResponse(BaseModel):
     word_freq: Dict[str, int]
 
 
-@bp_word_freq.post("/posseg")
+@bp_freq.post("/posseg")
 def posseg_handler(request: Request) -> HTTPResponse:
     try:
         request_data = PossegHandlerRequest.parse_obj(request.json)
