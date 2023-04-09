@@ -7,7 +7,7 @@ from yaml import load as yaml_load
 
 _DEFAULT_CONFIG = {
     "version": "v0.1.0",
-    "port": 7001,
+    "port": 6001,
     "db": {
         "host": "localhost",
         "port": 27017,
