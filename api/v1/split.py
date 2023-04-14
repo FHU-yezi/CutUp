@@ -85,7 +85,7 @@ def posseg_handler(request: Request) -> HTTPResponse:
         jieba_posseg_spliter.set_allowed_word_type(request_data.allowed_word_types)
     else:
         jieba_posseg_spliter.set_allowed_word_types_file(
-            "word_split_assets/posseg_default_allow_types.txt"
+            "word_split_assets/posseg_default_allowed_types.txt"
         )
     splitted_text = tuple(jieba_posseg_spliter.split(request_data.text))
 
