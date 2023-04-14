@@ -65,7 +65,7 @@ def search_handler(request: Request) -> HTTPResponse:
 class PossegHandlerRequest(BaseModel):
     library: Literal["jieba"]
     text: str
-    allow_word_types: Set[str] = set()
+    allowed_word_types: Set[str] = set()
 
 
 class PossegHandlerResponse(BaseModel):
@@ -81,8 +81,8 @@ def posseg_handler(request: Request) -> HTTPResponse:
     except ValidationError:
         return sanic_response_json(code=CODE.BAD_ARGUMENTS)
 
-    if request_data.allow_word_types:
-        jieba_posseg_spliter.set_allowed_word_type(request_data.allow_word_types)
+    if request_data.allowed_word_types:
+        jieba_posseg_spliter.set_allowed_word_type(request_data.allowed_word_types)
     else:
         jieba_posseg_spliter.set_allowed_word_types_file(
             "word_split_assets/posseg_default_allow_types.txt"
