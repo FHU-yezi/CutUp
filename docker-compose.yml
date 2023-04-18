@@ -8,7 +8,7 @@ networks:
 
 services:
   main:
-    image: cutup:0.2.1
+    image: cutup:0.3.0
     build: .
     volumes:
       - "./config.yaml:/app/config.yaml:ro"
