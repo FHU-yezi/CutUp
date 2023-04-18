@@ -7,7 +7,7 @@ networks:
     external: true
 
 services:
-  main:
+  cutup:
     image: cutup:0.3.0
     build: .
     volumes:
