@@ -9,14 +9,14 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.8"
 sanic = "^23.3.0"
-sspeedup = {extras = ["api-response-sanic", "word-split-jieba"], version = "^0.6.0"}
+sspeedup = {version = "^0.11.0", extras = ["api-response-sanic", "word-split-jieba"]}
 pyyaml = "^6.0"
 pymongo = "^4.3.3"
 pydantic = "^1.10.7"
 
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.0.261"
+ruff = "^0.0.263"
 pyright = "^1.1.302"
 black = "^23.3.0"
 
